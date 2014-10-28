@@ -13,6 +13,8 @@ and open the template in the editor.
         
         <h1>Please select a product</h1>
          <form action="search.php" method = "post"  id = "search"> 
+             <label> <h4>What can I get you?</h4></label>
+             <input  type="text" name ="name">
              <label> <h4>Enter a minimum amount you would like to spend</h4></label>
              <input  type="text" name ="min"> 
              <label> <h4>Enter a maximum amount</h4></label>

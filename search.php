@@ -2,11 +2,11 @@
 
 include_once "database.php";
 
-if (isset($_POST['submit'])) {
+    $name = $_POST["name"];
     $min = $_POST["min"];
     $max = $_POST["max"];
     echo $name;
-    $stmt = $DBH->prepare("SELECT * FROM product WHERE price > $min AND price < $max order by price asc");
+    $stmt = $DBH->prepare("SELECT * FROM product WHERE price > $min AND price < $max AND category = '" . $name . "'order by price asc");
 
 
     try {
@@ -38,7 +38,6 @@ if (isset($_POST['submit'])) {
         echo "<tr/>";
     }
     echo "</table></center>";
-} else {
-    echo ("Search Box is empty.Please enter a search query");
-}
+
+
 ?>
