@@ -1,0 +1,28 @@
+ <h1>Please select a product</h1>
+         <form action="search.php "  method = "post"  id = "search"> 
+             <label> <h4>What can I get you?</h4></label>
+             <input  type="text" id='name2' name ="name">
+             <label> <h4>Enter a minimum amount you would like to spend</h4></label>
+             <input  type="text" id="min" name ="min"> 
+             <label> <h4>Enter a maximum amount</h4></label>
+             <input type ="text" id="max" name = "max"> 
+             <input  type="submit" name="submit" value="Search"> 
+             <input type="button" name = "button1" value = "json">
+	    </form> 
+<input type ="submit" name = "button2" id ="button2" value = "json">
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>   
+<script>
+    var myName = $("#name").val();
+    $("button2").click (function() {
+       var name = $("name2").val();
+       var max =  $("max").val();
+       var min =  $("min").val();
+  $.get('search.php?name=' + name + 'min=' + min + 'max=' + max ,function (data) {
+      
+          alert(data);
+      });
+  });
+
+</script>
+</html>
+//return json array from php
